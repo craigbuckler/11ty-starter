@@ -1,0 +1,42 @@
+// theme toggle switch
+#themetoggle {
+
+  transform: scale(0);
+  display: inline-block;
+  appearance: none;
+  outline: none;
+  width: 2em;
+  height: 2em;
+  vertical-align: text-top;
+  margin-inline-start: 1em;
+  background: #ff0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px #fff;
+  transition: all 0.5s linear;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 1.7em;
+    height: 1.7em;
+    background-color: var(--color-back2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.1s linear;
+  }
+
+  .light &, .dark & {
+    transform: scale(1);
+  }
+
+  .light & {
+    background: #fff;
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+}

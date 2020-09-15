@@ -1,0 +1,71 @@
+// default element styles
+html {
+  font-size: var(--font-size);
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  @include reset;
+  color: var(--color-text1);
+  background-color: var(--color-back1);
+}
+
+h1, h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-block-start: 1em;
+}
+
+p {
+  margin-block: 1rem 0;
+}
+
+h1 + p, h2 + p {
+  margin-block-start: 0;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  height: 3rem;
+  margin-inline: 4px;
+  fill: var(--color-back4);
+}
+
+a {
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-back4);
+    transform-origin: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in;
+  }
+
+  &:link, &:visited {
+    font-weight: var(--font-bold);
+    text-decoration: none;
+    color: var(--color-back3);
+  }
+
+  &:hover, &:active, &:focus {
+    color: var(--color-back4);
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+}

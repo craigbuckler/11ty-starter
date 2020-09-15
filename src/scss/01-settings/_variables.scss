@@ -1,0 +1,43 @@
+@mixin themelight {
+  --color-text1: #222;
+  --color-back1: #f1faee;
+  --color-back2: #a8dadc;
+  --color-back3: #457b9d;
+  --color-back4: #1d3557;
+}
+
+@mixin themedark {
+  --color-text1: #ddd;
+  --color-back1: #1d3557;
+  --color-back2: #457b9d;
+  --color-back3: #a8dadc;
+  --color-back4: #f1faee;
+}
+
+:root {
+
+  // fonts
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-size: clamp(1rem, calc(1rem + 0.5vw), 2.5rem);
+  --font-weight: 300;
+  --font-bold: 600;
+  --line-height: 1.5;
+
+  // colors: light theme (default)
+  @include themelight;
+
+  // dark theme (CSS)
+  @media (prefers-color-scheme: dark) {
+    @include themedark;
+  }
+
+}
+
+// colors: user set
+body.light {
+  @include themelight;
+}
+
+body.dark {
+  @include themedark;
+}

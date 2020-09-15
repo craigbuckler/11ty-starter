@@ -1,0 +1,39 @@
+{% include "partials/htmlhead.njk" %}
+
+<header>
+
+  <p class="logo"><a href="/"><img src="/images/logo.svg" width="50" height="50" alt="11ty starter" inline>11ty starter</a></p>
+
+  <button id="themetoggle" title="switch theme"></button>
+
+  <nav>
+    {% navlist collections.all | eleventyNavigation, page, 1 %}
+  </nav>
+
+  <figure><img src="/images/{% if hero %}{{ hero }}{% else %}orb.jpg{% endif %}" width="400" height="300" alt="decoration" /></figure>
+
+</header>
+
+<main>
+{% block content %}
+
+  <h1>{{ title }}</h1>
+
+  {{ content | safe }}
+
+  {% include "partials/pagelist.njk" %}
+
+{% endblock %}
+</main>
+
+<footer>
+
+  <p class="github"><a href="https://github.com/craigbuckler/11ty-starter"><img src="/images/github.svg" width="50" height="50" alt="11ty starter" inline>github.com/craigbuckler/11ty-starter</a></p>
+
+  <nav>
+    {% navlist collections.all | eleventyNavigation, page, 2 %}
+  </nav>
+
+</footer>
+
+{% include "partials/htmlfoot.njk" %}

@@ -1,0 +1,46 @@
+// page footer
+footer {
+
+  background-color: var(--color-back2);
+  border-top: 3px solid var(--color-back4);
+
+  .github {
+    text-align: center;
+    margin-block: 1em;
+
+    a {
+      color: var(--color-back4);
+
+      &::before {
+        display: none;
+      }
+    }
+
+  }
+
+  nav {
+    margin-block: 1em;
+
+    ul {
+      @include resetlist;
+    }
+
+    & > ul {
+
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+
+      ul a:link {
+        font-weight: var(--font-weight);
+      }
+
+    }
+
+    strong {
+      color: var(--color-back4);
+    }
+
+  }
+
+}

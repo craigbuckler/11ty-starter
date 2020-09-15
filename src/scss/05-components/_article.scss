@@ -1,0 +1,49 @@
+// article formatting
+.pagelist {
+
+  p {
+    margin: 0;
+  }
+
+}
+
+.pagenav {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+
+  p {
+    margin: 0;
+  }
+}
+
+.time, .words {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin: 0;
+  margin-inline-end: 1em;
+}
+
+.next, .prev {
+
+  font-size: 0.8em;
+  margin-block: 0;
+
+  em {
+    display: inline-block;
+    width: 7em;
+  }
+
+}
+
+.next, .prev, .pagenav {
+  margin-block-start: 2em;
+  padding-block-start: 0.5em;
+  border-top: 2px dotted var(--color-back3);
+}
+
+.next + .prev {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}

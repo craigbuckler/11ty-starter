@@ -1,0 +1,70 @@
+// page header
+header {
+
+  background-color: var(--color-back2);
+
+  .logo {
+
+    display: inline-block;
+    font-size: 2rem;
+    letter-spacing: -0.1vw;
+    @include reset;
+    margin-inline-start: 0.5rem;
+
+    a {
+      color: var(--color-back4);
+
+      &::before {
+        display: none;
+      }
+    }
+
+  }
+
+  nav {
+
+    float: right;
+    margin-inline-end: 1rem;
+    margin-block-end: 1rem;
+
+    ul {
+      display: flex;
+      gap: 1.5rem;
+      @include resetlist;
+
+      a, strong {
+        position: relative;
+        display: block;
+        padding-block-start: 1rem;
+        color: var(--color-back4);
+      }
+
+      strong::after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 5px);
+        bottom: -10px;
+        width: 0;
+        height: 0;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent;
+        border-top-color: var(--color-back4);
+      }
+    }
+  }
+
+  figure {
+    width: 100%;
+    @include reset;
+    border-top: 3px solid var(--color-back4);
+    border-bottom: 3px solid var(--color-back4);
+    overflow: hidden;
+
+    img {
+      height: 35vh;
+      object-fit: cover;
+    }
+  }
+
+}

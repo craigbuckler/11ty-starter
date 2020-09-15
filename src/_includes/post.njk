@@ -1,0 +1,19 @@
+{% extends "page.njk" %}
+
+{% block content %}
+
+  <h1>{{ title }}</h1>
+
+  {% if date %}<p class="time"><time datetime="{{ date | dateymd }}">{{ date | datefriendly }}</time></p>{% endif %}
+
+  <p class="words">{{ content | wordcount | readtime }}</p>
+
+  {{ content | safe }}
+
+  {% set nextPost = collections.post | getNextCollectionItem(page) %}
+  {% if nextPost %}<p class="next"><em>next article:</em> <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>{% endif %}
+
+  {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+  {% if previousPost %}<p class="prev"><em>previous article:</em> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></p>{% endif %}
+
+{% endblock %}
